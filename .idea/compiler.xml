@@ -9,10 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="fraud" />
         <module name="customer" />
+        <module name="discovery-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="customer" target="8" />
+      <module name="discovery-server" target="1.7" />
       <module name="fraud" target="8" />
       <module name="microservices" target="1.7" />
     </bytecodeTargetLevel>

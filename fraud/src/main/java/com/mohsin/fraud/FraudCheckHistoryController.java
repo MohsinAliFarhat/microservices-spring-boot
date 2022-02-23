@@ -16,8 +16,10 @@ public class FraudCheckHistoryController {
     public FraudCheckResponse isFraudster(@PathVariable("customerId") Integer customerId){
 
         log.info("Customer Info received: {}",customerId);
-        boolean isFrauduldentCustomer  = fraudCheckService.isFraudulentCustomer(customerId);
-        log.info("isFraudulentCustomer: {}",isFrauduldentCustomer);
-        return new FraudCheckResponse(isFrauduldentCustomer);
+        boolean isFraudulentCustomer  = fraudCheckService.isFraudulentCustomer(customerId);
+        log.info("isFraudulentCustomer: {}",isFraudulentCustomer);
+        FraudCheckResponse fraudCheckResponse = new FraudCheckResponse(isFraudulentCustomer);
+        log.info("Response Object: {}",fraudCheckResponse);
+        return fraudCheckResponse;
     }
 }

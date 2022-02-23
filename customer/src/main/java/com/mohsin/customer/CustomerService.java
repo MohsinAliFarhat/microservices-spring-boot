@@ -30,14 +30,14 @@ public class CustomerService {
         log.info("New customer registered.");
 
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://localhost:8081/api/v1/fraud-check/{customerId}",
+                "http://fraud-service/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,
                 customer.getId()
         );
 
-        log.info("Response received from Fraud microservice: {}",fraudCheckResponse.isFraudulent());
+        log.info("Response received from Fraud microservice: {}",fraudCheckResponse.getIsFraudulent());
 
-        if(fraudCheckResponse.isFraudulent()){
+        if(fraudCheckResponse.getIsFraudulent()){
             throw new IllegalStateException("fraudster");
         }
         // todo: send notification

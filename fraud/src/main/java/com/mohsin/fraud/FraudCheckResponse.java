@@ -1,12 +1,12 @@
 package com.mohsin.fraud;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @Getter
 @Setter
+@Data
+@NoArgsConstructor
 public class FraudCheckResponse {
-    private boolean isFraudulent;
+    private Boolean isFraudulent;
 }

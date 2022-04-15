@@ -16,7 +16,7 @@ public class CustomerService {
 
     private final RestTemplate restTemplate;    //Injected through constructor
 
-    public void registerCustomer(CustomerRegistrationRequest request) {
+    public CustomerResponse registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
@@ -26,7 +26,8 @@ public class CustomerService {
         // todo: check if email valid
         // todo: check if email not taken
         // todo:  check if fraudster
-        customerRepository.saveAndFlush(customer);
+        Customer customeRegistered = customerRepository.saveAndFlush(customer);
+        CustomerResponse customerResponse = new CustomerResponse(customeRegistered);
         log.info("New customer registered.");
 
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
@@ -41,5 +42,6 @@ public class CustomerService {
             throw new IllegalStateException("fraudster");
         }
         // todo: send notification
+        return customerResponse;
     }
 }

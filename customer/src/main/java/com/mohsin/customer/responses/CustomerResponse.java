@@ -1,5 +1,6 @@
-package com.mohsin.customer;
+package com.mohsin.customer.responses;
 
+import com.mohsin.customer.models.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

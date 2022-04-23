@@ -1,10 +1,19 @@
-package com.mohsin.customer;
+package com.mohsin.customer.services;
 
+import com.mohsin.customer.responses.CustomerResponse;
+import com.mohsin.customer.responses.FraudCheckResponse;
+import com.mohsin.customer.models.Customer;
+import com.mohsin.customer.repositories.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Slf4j
 @Service
@@ -16,7 +25,7 @@ public class CustomerService {
 
     private final RestTemplate restTemplate;    //Injected through constructor
 
-    public CustomerResponse registerCustomer(CustomerRegistrationRequest request) {
+    public CustomerResponse registerCustomer(Customer request) {
         Customer customer = Customer.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
@@ -44,4 +53,10 @@ public class CustomerService {
         // todo: send notification
         return customerResponse;
     }
+
+    public Object getAllCustomers(){
+        Pageable pageable = PageRequest.of(1, 10, Sort.Direction.ASC, "email");
+        return customerRepository.findAll(pageable);
+    }
+
 }

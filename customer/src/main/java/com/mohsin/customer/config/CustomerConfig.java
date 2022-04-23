@@ -1,4 +1,4 @@
-package com.mohsin.customer;
+package com.mohsin.customer.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

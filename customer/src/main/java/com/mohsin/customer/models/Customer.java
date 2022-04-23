@@ -1,4 +1,4 @@
-package com.mohsin.customer;
+package com.mohsin.customer.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

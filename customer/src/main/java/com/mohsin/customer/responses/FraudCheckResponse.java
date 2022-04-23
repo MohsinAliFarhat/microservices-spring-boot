@@ -1,4 +1,4 @@
-package com.mohsin.customer;
+package com.mohsin.customer.responses;
 
 import lombok.*;
 

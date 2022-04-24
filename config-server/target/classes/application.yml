@@ -7,4 +7,4 @@ spring:
     config:
       server:
         native:
-          searchLocations: file:///E:/personal-development/spring-boot-projects/microservices-spring-boot-postgres/config-server/src/main/resources/config/customer-service
+          searchLocations: classpath:config/customer-service

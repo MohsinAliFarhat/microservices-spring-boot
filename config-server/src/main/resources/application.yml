@@ -7,4 +7,4 @@ spring:
     config:
       server:
         native:
-          searchLocations: classpath:config/customer-service, classpath:config/fraud-service
+          searchLocations: classpath:config/customer-service, classpath:config/fraud-service,classpath:config/zuul-api-gw

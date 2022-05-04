@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
+        <module name="zuul-api-gw" />
         <module name="discovery-server" />
         <module name="fraud" />
         <module name="customer" />
@@ -19,6 +20,7 @@
       <module name="discovery-server" target="1.7" />
       <module name="fraud" target="8" />
       <module name="microservices" target="1.7" />
+      <module name="zuul-api-gw" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

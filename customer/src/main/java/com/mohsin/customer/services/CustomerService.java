@@ -59,4 +59,14 @@ public class CustomerService {
         return customerRepository.findAll(pageable);
     }
 
+    public Customer updateCustomerRecord(Customer upateCustomerRequest){
+        Customer updatedCustomer = customerRepository.save(upateCustomerRequest);
+        return updatedCustomer;
+    }
+
+    public Boolean deleteCustomerById(int customerId){
+        customerRepository.deleteById(customerId);
+        return true;
+    }
+
 }

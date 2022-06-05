@@ -12,6 +12,7 @@
         <module name="discovery-server" />
         <module name="fraud" />
         <module name="customer" />
+        <module name="oauth-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,8 @@
       <module name="discovery-server" target="1.7" />
       <module name="fraud" target="8" />
       <module name="microservices" target="1.7" />
+      <module name="oauth-server" target="8" />
+      <module name="OAuth2.0-Server" target="8" />
       <module name="zuul-api-gw" target="8" />
     </bytecodeTargetLevel>
   </component>
